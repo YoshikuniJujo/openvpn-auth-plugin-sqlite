@@ -1,10 +1,10 @@
 name:                openvpn-auth-plugin-sqlite
 version:             0.1.0.0
-github:              "githubuser/openvpn-auth-plugin-sqlite"
+github:              "YoshikuniJujo/openvpn-auth-plugin-sqlite"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2018 Author name here"
+author:              "Yoshikuni Jujo"
+maintainer:          "PAF01143@nifty.ne.jp"
+copyright:           "2018 Yoshikuni Jujo"
 
 extra-source-files:
 - README.md
@@ -23,10 +23,11 @@ dependencies:
 - base >= 4.7 && < 5
 
 library:
-  source-dirs: src
+   source-dirs: src
+#   other-modules: Lib
 
 executables:
-  openvpn-auth-plugin-sqlite-exe:
+  openvpn-auth-plugin-sqlite:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
