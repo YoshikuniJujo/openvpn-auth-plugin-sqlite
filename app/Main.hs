@@ -58,5 +58,7 @@ readHash = BS.pack . rh
 	rh _ = error "bad"
 
 hello :: IO ByteString
-hello = readHash . takeWhile (not . isSpace)
-	<$> readFile "hello2.txt"
+hello = (readHash . takeWhile (not . isSpace) <$>) $ do
+	h <- openFile "/etc/openvpn/password-file.txt" ReadMode
+	fp <- hGetLine h
+	readFile fp
