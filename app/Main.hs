@@ -24,6 +24,7 @@ main :: IO ()
 main = do
 	hPutStrLn stderr "HELOO HELLO BOOOOOOOOOOOOOOOOO"
 	fp : _as <- getArgs
+	hPutStrLn stderr fp
 	h <- openFile fp ReadMode
 	un <- BSC.hGetLine h
 	p <- BSC.hGetLine h
