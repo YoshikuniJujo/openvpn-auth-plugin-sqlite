@@ -1,0 +1,4 @@
+.stack-work/
+openvpn-auth-plugin-sqlite.cabal
+*~
+.*.swp
