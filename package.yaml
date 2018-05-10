@@ -35,7 +35,9 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - openvpn-auth-plugin-sqlite
+    - bytestring
+    - cryptonite
+    - memory
 
 tests:
   openvpn-auth-plugin-sqlite-test:
