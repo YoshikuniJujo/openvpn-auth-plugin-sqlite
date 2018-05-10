@@ -34,11 +34,25 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -fno-warn-tabs
     dependencies:
     - bytestring
     - cryptonite
     - memory
     - unix
+  check-auth:
+    main: check-auth.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    - -fno-warn-tabs
+    dependencies:
+    - process
+    - temporary
 
 tests:
   openvpn-auth-plugin-sqlite-test:
