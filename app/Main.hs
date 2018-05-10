@@ -22,6 +22,7 @@ import qualified Data.ByteString.Char8 as BSC
 
 main :: IO ()
 main = do
+	hPutStrLn stderr "HELOO HELLO BOOOOOOOOOOOOOOOOO"
 	fp : _as <- getArgs
 	h <- openFile fp ReadMode
 	un <- BSC.hGetLine h
