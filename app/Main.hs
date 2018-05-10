@@ -13,7 +13,8 @@ import Data.ByteString (ByteString)
 import System.IO
 import System.Environment
 import System.Exit
--- import System.Posix.User
+import System.Posix.User
+import System.Posix.Files
 import Crypto.Hash
 
 import qualified Data.ByteArray as BA
@@ -24,7 +25,10 @@ main :: IO ()
 main = do
 	hPutStrLn stderr "HELOO HELLO BOOOOOOOOOOOOOOOOO"
 	fp : _as <- getArgs
+	fs <- getFileStatus fp
 	hPutStrLn stderr fp
+	hPutStrLn stderr . show $ fileMode fs
+	hPutStrLn stderr . show =<< getUserEntryForID (fileOwner fs)
 	h <- openFile fp ReadMode
 	un <- BSC.hGetLine h
 	p <- BSC.hGetLine h

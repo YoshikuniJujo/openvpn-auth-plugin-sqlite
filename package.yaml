@@ -38,6 +38,7 @@ executables:
     - bytestring
     - cryptonite
     - memory
+    - unix
 
 tests:
   openvpn-auth-plugin-sqlite-test:
