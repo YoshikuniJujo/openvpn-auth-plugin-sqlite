@@ -1,3 +1,5 @@
+module Main where
+
 import Control.Exception
 import System.IO
 import System.Environment
