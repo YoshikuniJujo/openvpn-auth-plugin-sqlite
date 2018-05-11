@@ -8,13 +8,11 @@ main :: IO ()
 main = do
 	cmd : u : _ <- getArgs
 	withSystemTempFile "auth" $ \fp h -> do
-		putStrLn fp
 		hPutStrLn h u
 		withEcho False getLine >>= hPutStrLn h
 		hClose h
 		(_, _, _, ph) <- createProcess $ proc "stack" ["exec", cmd, fp]
 		waitForProcess ph >>= print
-		putStrLn u
 
 withEcho :: Bool -> IO a -> IO a
 withEcho echo action = do
