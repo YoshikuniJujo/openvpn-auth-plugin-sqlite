@@ -24,6 +24,7 @@ import qualified Data.ByteString.Char8 as BSC
 main :: IO ()
 main = do
 	hPutStrLn stderr "HELOO HELLO BOOOOOOOOOOOOOOOOO"
+	getEnv "auth_sqlite_db" >>= hPutStrLn stderr
 	fp : _as <- getArgs
 	fs <- getFileStatus fp
 	hPutStrLn stderr fp
