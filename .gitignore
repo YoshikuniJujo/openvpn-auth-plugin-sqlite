@@ -2,3 +2,4 @@
 openvpn-auth-plugin-sqlite.cabal
 *~
 .*.swp
+.html/
